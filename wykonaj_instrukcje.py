@@ -33,22 +33,4 @@ for line in linijki:
             PRZESUN(podzial[1])
             
         else:   
-            USUN_1() 
-        
-
-
-# zmienna = "płotek"
-# print(zmienna[len(zmienna) - 1])
-
-# DOPISZ("A")
-# DOPISZ("B")
-# DOPISZ("C")
-# DOPISZ("D")
-
-
-# b = tablica.index("A")
-# print(b)
-# tablica.pop(b)
-# c = tablica.index("B")
-# print(c)
-        
+            USUN_1()
