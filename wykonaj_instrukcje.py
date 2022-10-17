@@ -17,10 +17,15 @@ for line in linijki:
             tablica.append(zm_lit)
     
         def PRZESUN(pr_lit):
-            x = tablica.index(pr_lit)
-            z = chr(ord(tablica[x]) + 1)
-            tablica.pop(x)
-            tablica.insert(x, z)
+             x = tablica.index(pr_lit)
+            if ord(tablica[x]) == 90:
+                z = chr(65)
+                tablica.pop(x)
+                tablica.insert(x, z)
+            else:
+                z = chr(ord(tablica[x]) + 1)
+                tablica.pop(x)
+                tablica.insert(x, z)
 
 
         if podzial[0] == "DOPISZ":
