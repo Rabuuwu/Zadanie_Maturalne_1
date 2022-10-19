@@ -1,8 +1,6 @@
 tablica = []
-#dlugosc =0
-#komenda = ""
-#pkomenda = ""
-
+komenda = []
+i=1
 plik =  open('instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
 
@@ -27,27 +25,42 @@ def PRZESUN(pr_lit):
         tablica.pop(x)
         tablica.insert(x, z)
 
-# def LICZ():          #zrobić to w funkcji
-#     dlugosc
-
+def warunek():          #4.2
+    if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
+        print(komenda)
+        if (i>max_a):
+            max_a=i
+            print(max_a)
+        else:
+            i+=1
+    else:
+        del komenda[:len(komenda)-1]
+        print(komenda)
+        
 try:
     for line in linijki:
         podzial = line.split()
+        
+
         if podzial[0] == "DOPISZ":
             DOPISZ(podzial[1])
-            komenda = "dopisz"
+            komenda.append("dopisz")
+            warunek()
         elif podzial[0] == "ZMIEN":
             ZMIEN(podzial[1])
-            komenda = "zmien"
+            komenda.append("zmien")
+            warunek()
         elif podzial[0] == "PRZESUN":
             PRZESUN(podzial[1])
-            komenda = "przesun"
+            komenda.append("przesun")
+            warunek()
         else:   
             USUN_1()
-            komenda = "usun"
-
+            komenda.append("usun")
+            warunek()
+    
 except:
-    print(tablica)
-    print(len(tablica)) #4.1
-    # print(dlugosc) #4.2
-
+    # print(tablica)
+    # print(len(tablica)) #4.1
+    #  
+    print("Done!")
