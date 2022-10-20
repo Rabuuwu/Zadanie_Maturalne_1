@@ -65,7 +65,7 @@ try:
             warunek()
     
 except:
-    # print(tablica)
+    # print(tablica) #4.4
     # print(len(tablica)) #4.1
     print("Done!")
     
