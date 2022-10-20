@@ -1,6 +1,6 @@
 tablica = []
 komenda = []
-i=1
+i = 1
 plik =  open('instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
 
@@ -28,11 +28,13 @@ def PRZESUN(pr_lit):
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
         print(komenda)
-        if (i>max_a):
-            max_a=i
-            print(max_a)
-        else:
-            i+=1
+        # i+=1
+        # if (i>max_a):
+        #     max_a=i
+        #     print(max_a)
+        #     print(komenda)
+        # else:
+        #     print(max_a)
     else:
         del komenda[:len(komenda)-1]
         print(komenda)
@@ -62,5 +64,4 @@ try:
 except:
     # print(tablica)
     # print(len(tablica)) #4.1
-    #  
     print("Done!")
