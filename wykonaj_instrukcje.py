@@ -1,3 +1,6 @@
+from urllib.parse import MAX_CACHE_SIZE
+
+
 tablica = []
 komenda = []
 i = 1
@@ -27,17 +30,17 @@ def PRZESUN(pr_lit):
 
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
-        print(komenda)
-        # i+=1
-        # if (i>max_a):
-        #     max_a=i
-        #     print(max_a)
-        #     print(komenda)
-        # else:
-        #     print(max_a)
+        new_func()
     else:
         del komenda[:len(komenda)-1]
-        print(komenda)
+
+def new_func():
+    max_a =1
+    if (len(komenda)>max_a):
+        max_a=len(komenda)
+        print(max_a)
+    else:
+        max_a
         
 try:
     for line in linijki:
@@ -65,3 +68,4 @@ except:
     # print(tablica)
     # print(len(tablica)) #4.1
     print("Done!")
+    
