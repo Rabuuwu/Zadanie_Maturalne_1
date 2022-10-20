@@ -1,9 +1,6 @@
-from urllib.parse import MAX_CACHE_SIZE
-
-
 tablica = []
 komenda = []
-i = 1
+max_a =1
 plik =  open('instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
 
@@ -30,17 +27,20 @@ def PRZESUN(pr_lit):
 
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
+        
         new_func()
+
     else:
         del komenda[:len(komenda)-1]
 
 def new_func():
-    max_a =1
+    max_a = 2
     if (len(komenda)>max_a):
-        max_a=len(komenda)
+        max_a= len(komenda)
         print(max_a)
     else:
-        max_a
+        max_a =2
+
         
 try:
     for line in linijki:
