@@ -1,6 +1,3 @@
-from traceback import print_tb
-
-licz=[]
 tablica = []
 komenda = []
 plik =  open('instrukcje.txt', 'r').read()
@@ -28,47 +25,23 @@ def PRZESUN(pr_lit):
 
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
-        new_func()
+        max_liczba_polecen()
 
     else:
         del komenda[:len(komenda)-1]
-    if (podzial[len(podzial)-2] == podzial[len(podzial)-1]):
-        new_func2()
 
-    else:
-        del podzial[:len(podzial)-1]
-
-def new_func():
+def max_liczba_polecen():
     global max_a
     global polecenie
     global i
     if (len(komenda)>i):
-        # i = len(komenda)
         polecenie = komenda[(len(komenda)-1)]
         i += 1
-
     else:
         max_a = i
 
-def new_func2():
-    global max_b
-    global literka
-    global j
-    if (len(podzial)>j):
-        # i = len(komenda)
-        literka = podzial[(len(podzial)-1)]
-        j += 1
-
-    else:
-        max_b = j
-
-def wystep():
-    licz.append(podzial[1])
-
 NAPIS = ""
-j = 0
-i = 0
-x = 0
+k, i, x = 0
 for line in linijki:
     x += 1
     podzial = line.split()
@@ -78,7 +51,8 @@ for line in linijki:
         DOPISZ(podzial[1])
         komenda.append("dopisz")
         warunek()
-        wystep()
+        from collections import Counter
+        counter = Counter(tablica)
     elif podzial[0] == "ZMIEN":
         ZMIEN(podzial[1])
         komenda.append("zmien")
@@ -91,14 +65,21 @@ for line in linijki:
         USUN_1()
         komenda.append("usun")
         warunek()
+    
+arr = counter
 
 
+# print(tablica)
+# print(len(tablica))           #4.1
+# print(komenda)
+# print(linijki[len(linijki) - 2]) 
+# print(max_a, polecenie)         #4.2
+# print(NAPIS.join(tablica))      #4.4
+# print(NAPIS.join(licz))#4.3
 
-print(tablica)
-print(NAPIS.join(tablica)) #4.4
-# print(len(tablica)) #4.1
-print(komenda)
-print(linijki[len(linijki) - 2]) 
 print("Done!")
-print(max_a, polecenie)        #4.2
-
+print(arr)
+with open("liczba.txt", "w") as odp:
+    odpowiedzi = "\n".join(arr)
+    odp.write(odpowiedzi)
+odp.close()
