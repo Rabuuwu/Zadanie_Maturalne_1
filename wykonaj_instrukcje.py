@@ -73,6 +73,8 @@ for line in linijki:
 
 # print(tablica)
 # print(len(tablica)) #4.1
+print(komenda)
+print(linijki[len(linijki) - 2]) 
 print("Done!")
 print(max_a)
 print(polecenie)
