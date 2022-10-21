@@ -1,9 +1,10 @@
+from traceback import print_tb
+
+
 tablica = []
 komenda = []
-max_a =1
 plik =  open('instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
-
 def USUN_1():
     tablica.pop(len(tablica) - 1)
 
@@ -27,45 +28,51 @@ def PRZESUN(pr_lit):
 
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
-        
         new_func()
 
     else:
         del komenda[:len(komenda)-1]
 
 def new_func():
-    max_a = 2
-    if (len(komenda)>max_a):
-        max_a= len(komenda)
-        print(max_a)
+    global max_a
+    global polecenie
+    global i
+    if (len(komenda)>i):
+        i = len(komenda)
+        polecenie = komenda[(len(komenda)-1)]
+        i += 1
+
     else:
-        max_a =2
+        max_a = i
 
-        
-try:
-    for line in linijki:
-        podzial = line.split()
-        
+i = 1
+x = 0
+for line in linijki:
+    x += 1
+    podzial = line.split()
+    if x >= len(linijki):
+        break
+    if podzial[0] == "DOPISZ":
+        DOPISZ(podzial[1])
+        komenda.append("dopisz")
+        warunek()
+    elif podzial[0] == "ZMIEN":
+        ZMIEN(podzial[1])
+        komenda.append("zmien")
+        warunek()
+    elif podzial[0] == "PRZESUN":
+        PRZESUN(podzial[1])
+        komenda.append("przesun")
+        warunek()
+    else:   
+        USUN_1()
+        komenda.append("usun")
+        warunek()
 
-        if podzial[0] == "DOPISZ":
-            DOPISZ(podzial[1])
-            komenda.append("dopisz")
-            warunek()
-        elif podzial[0] == "ZMIEN":
-            ZMIEN(podzial[1])
-            komenda.append("zmien")
-            warunek()
-        elif podzial[0] == "PRZESUN":
-            PRZESUN(podzial[1])
-            komenda.append("przesun")
-            warunek()
-        else:   
-            USUN_1()
-            komenda.append("usun")
-            warunek()
-    
-except:
-    # print(tablica)
-    # print(len(tablica)) #4.1
-    print("Done!")
-    
+
+
+# print(tablica)
+# print(len(tablica)) #4.1
+print("Done!")
+print(max_a)
+print(polecenie)
