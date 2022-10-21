@@ -67,8 +67,6 @@ for line in linijki:
         USUN_1()
         komenda.append("usun")
         warunek()
-    
-arr = counter
 
 
 print(tablica)
@@ -81,7 +79,7 @@ print(NAPIS.join(tablica))      #4.4
 
 
 with open("liczba.txt", "w") as odp:
-    odpowiedzi = "\n".join(arr)
+    odpowiedzi = "\n".join(counter)
     odp.write(odpowiedzi)
 odp.close()
 print("Litery zapisane w pliku liczba.txt")
