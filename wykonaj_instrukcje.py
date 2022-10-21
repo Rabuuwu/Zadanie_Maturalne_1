@@ -1,6 +1,6 @@
 from traceback import print_tb
 
-
+licz=[]
 tablica = []
 komenda = []
 plik =  open('instrukcje.txt', 'r').read()
@@ -32,20 +32,42 @@ def warunek():          #4.2
 
     else:
         del komenda[:len(komenda)-1]
+    if (podzial[len(podzial)-2] == podzial[len(podzial)-1]):
+        new_func2()
+
+    else:
+        del podzial[:len(podzial)-1]
 
 def new_func():
     global max_a
     global polecenie
     global i
     if (len(komenda)>i):
-        i = len(komenda)
+        # i = len(komenda)
         polecenie = komenda[(len(komenda)-1)]
         i += 1
 
     else:
         max_a = i
 
-i = 1
+def new_func2():
+    global max_b
+    global literka
+    global j
+    if (len(podzial)>j):
+        # i = len(komenda)
+        literka = podzial[(len(podzial)-1)]
+        j += 1
+
+    else:
+        max_b = j
+
+def wystep():
+    licz.append(podzial[1])
+
+NAPIS = ""
+j = 0
+i = 0
 x = 0
 for line in linijki:
     x += 1
@@ -56,6 +78,7 @@ for line in linijki:
         DOPISZ(podzial[1])
         komenda.append("dopisz")
         warunek()
+        wystep()
     elif podzial[0] == "ZMIEN":
         ZMIEN(podzial[1])
         komenda.append("zmien")
@@ -71,10 +94,11 @@ for line in linijki:
 
 
 
-# print(tablica)
+print(tablica)
+print(NAPIS.join(tablica)) #4.4
 # print(len(tablica)) #4.1
 print(komenda)
 print(linijki[len(linijki) - 2]) 
 print("Done!")
-print(max_a)
-print(polecenie)
+print(max_a, polecenie)        #4.2
+
