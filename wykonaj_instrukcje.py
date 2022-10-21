@@ -41,7 +41,9 @@ def max_liczba_polecen():
         max_a = i
 
 NAPIS = ""
-k, i, x = 0
+k = 0
+i = 0 
+x = 0
 for line in linijki:
     x += 1
     podzial = line.split()
@@ -69,17 +71,18 @@ for line in linijki:
 arr = counter
 
 
-# print(tablica)
-# print(len(tablica))           #4.1
+print(tablica)
+print(len(tablica))           #4.1
 # print(komenda)
 # print(linijki[len(linijki) - 2]) 
-# print(max_a, polecenie)         #4.2
-# print(NAPIS.join(tablica))      #4.4
+print(max_a, polecenie)         #4.2
+print(NAPIS.join(tablica))      #4.4
 # print(NAPIS.join(licz))#4.3
 
-print("Done!")
-print(arr)
+
 with open("liczba.txt", "w") as odp:
     odpowiedzi = "\n".join(arr)
     odp.write(odpowiedzi)
 odp.close()
+print("Litery zapisane w pliku liczba.txt")
+print("Done!")
