@@ -1,5 +1,7 @@
+from collections import Counter
 tablica = []
 komenda = []
+wyst = []
 plik =  open('instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
 def USUN_1():
@@ -26,7 +28,6 @@ def PRZESUN(pr_lit):
 def warunek():          #4.2
     if (komenda[len(komenda)-2] == komenda[len(komenda)-1]):
         max_liczba_polecen()
-
     else:
         del komenda[:len(komenda)-1]
 
@@ -53,8 +54,7 @@ for line in linijki:
         DOPISZ(podzial[1])
         komenda.append("dopisz")
         warunek()
-        from collections import Counter
-        counter = Counter(tablica)
+        wyst.append(podzial[1])
     elif podzial[0] == "ZMIEN":
         ZMIEN(podzial[1])
         komenda.append("zmien")
@@ -68,19 +68,11 @@ for line in linijki:
         komenda.append("usun")
         warunek()
 
+    counter = Counter(wyst)
 
-print(tablica)
-print(len(tablica))           #4.1
-# print(komenda)
-# print(linijki[len(linijki) - 2]) 
+# print(tablica)
+print(len(tablica))             #4.1
 print(max_a, polecenie)         #4.2
+print(counter)                  #4.3
 print(NAPIS.join(tablica))      #4.4
-# print(NAPIS.join(licz))#4.3
-
-
-with open("liczba.txt", "w") as odp:
-    odpowiedzi = "\n".join(counter)
-    odp.write(odpowiedzi)
-odp.close()
-print("Litery zapisane w pliku liczba.txt")
 print("Done!")
