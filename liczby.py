@@ -17,8 +17,9 @@ def rozloz(n):
 
     if(len(czynniki)> d):
         d = len(czynniki)
-        print(n, d)
-        # print(czynniki)
+        # print(n, d)
+        print(czynniki)
+    
     return czynniki
     
 for line in linijki:
