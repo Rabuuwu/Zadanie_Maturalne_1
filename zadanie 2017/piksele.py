@@ -23,6 +23,7 @@
 # print(flag)
 
 #           Zadanie 6.3
+
 plik = open("przyklad.txt",'r').read()
 linijki = plik.split('\n')
 i=0
