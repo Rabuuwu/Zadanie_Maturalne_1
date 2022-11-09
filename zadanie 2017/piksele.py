@@ -29,6 +29,7 @@ linijki = plik.split('\n')
 i=0
 j=0
 liczba = 0
+count=0
 kontarstujace=0
 pixele = [[ [''] for a in range(320)] for b in range(200)]
 
@@ -36,9 +37,8 @@ pixele = [[ [''] for a in range(320)] for b in range(200)]
 
 def isPixelContrasting(pixel1, pixel2):
     if((int(pixel1)-int(pixel2))>128):
-        return true
-    else:
-        return false
+        count+=1
+    
 
 for line in linijki:
     podzial = line.split()
@@ -50,18 +50,22 @@ for line in linijki:
                 break
             else:
                 pixele[i][j] = podzial[j]
-       
-                for a in range(200):
-                    a+=1
-                    if a>0 and isPixelContrasting(str(pixele[a-1][j]),str(pixele[a][j])):
-                        kontrastujace+=1
-                    elif a<199 and isPixelContrasting(str(pixele[a+1][j]),str(pixele[a][j])):
-                        kontarstujace+=1
-                    elif j>0 and isPixelContrasting(pixele[a-1][j],pixele[a][j]):
-                        kontarstujace+=1
-                    elif j<319 and isPixelContrasting(pixele[a][j+1],pixele[a][j]):
-                        kontarstujace+=1
-    i+=1 
+    i+=1
+     
+def licz():
+    for a in range(200):
+        a+=1
+        for b in range(320):
+            b+=1
+            if a>0 and isPixelContrasting(str(pixele[a-1][j]),str(pixele[a][j])):
+                kontrastujace+=1
+            elif a<199 and isPixelContrasting(str(pixele[a+1][j]),str(pixele[a][j])):
+                kontarstujace+=1
+            elif j>0 and isPixelContrasting(pixele[a-1][j],pixele[a][j]):
+                kontarstujace+=1
+            elif j<319 and isPixelContrasting(pixele[a][j+1],pixele[a][j]):
+                kontarstujace+=1
+licz()
 print(kontarstujace)
 
 
