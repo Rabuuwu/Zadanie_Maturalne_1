@@ -28,17 +28,34 @@ plik = open("przyklad.txt",'r').read()
 linijki = plik.split('\n')
 i=0
 j=0
+a=0
+b=0
 liczba = 0
 count=0
-kontarstujace=0
-pixele = [[ [''] for a in range(320)] for b in range(200)]
+kontrastujace=0
+pixele = [[ 0 for a in range(320)] for b in range(200)]
 
 # print(pixele)
-
 def isPixelContrasting(pixel1, pixel2):
+    global count
     if((int(pixel1)-int(pixel2))>128):
-        count+=1
+        count +=1
+        return
     
+def licz():
+    global kontrastujace
+    for a in range(200):
+        for b in range(320):
+            if a>0 and isPixelContrasting(pixele[a-1][b],pixele[a][b]):
+                kontrastujace+=1
+            elif a<199 and isPixelContrasting(pixele[a+1][b],pixele[a][b]):
+                kontrastujace+=1
+            elif b>0 and isPixelContrasting(pixele[a][b-1],pixele[a][b]):
+                kontrastujace+=1
+            elif b<319 and isPixelContrasting(pixele[a][b+1],pixele[a][b]):
+                kontrastujace+=1
+            b+=1
+        a+=1
 
 for line in linijki:
     podzial = line.split()
@@ -50,23 +67,12 @@ for line in linijki:
                 break
             else:
                 pixele[i][j] = podzial[j]
+                
     i+=1
-     
-def licz():
-    for a in range(200):
-        for b in range(320):
-            if a>0 and isPixelContrasting(str(pixele[a-1][j]),str(pixele[a][j])):
-                kontrastujace+=1
-            elif a<199 and isPixelContrasting(str(pixele[a+1][j]),str(pixele[a][j])):
-                kontarstujace+=1
-            elif j>0 and isPixelContrasting(pixele[a-1][j],pixele[a][j]):
-                kontarstujace+=1
-            elif j<319 and isPixelContrasting(pixele[a][j+1],pixele[a][j]):
-                kontarstujace+=1
-            b+=1
-         a+=1
-licz()
-print(kontarstujace)
+licz()     
+
+
+print(count)
 
 
 # int countContrastingPixels(int data[][320]) {
