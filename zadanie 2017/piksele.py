@@ -54,9 +54,7 @@ for line in linijki:
      
 def licz():
     for a in range(200):
-        a+=1
         for b in range(320):
-            b+=1
             if a>0 and isPixelContrasting(str(pixele[a-1][j]),str(pixele[a][j])):
                 kontrastujace+=1
             elif a<199 and isPixelContrasting(str(pixele[a+1][j]),str(pixele[a][j])):
@@ -65,6 +63,8 @@ def licz():
                 kontarstujace+=1
             elif j<319 and isPixelContrasting(pixele[a][j+1],pixele[a][j]):
                 kontarstujace+=1
+            b+=1
+         a+=1
 licz()
 print(kontarstujace)
 
