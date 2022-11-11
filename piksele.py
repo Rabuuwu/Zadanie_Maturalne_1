@@ -24,7 +24,7 @@
 
 #           Zadanie 6.3
 
-plik = open("dane.txt",'r').read()
+plik = open("przyklad.txt",'r').read()
 linijki = plik.split('\n')
 i=0
 j=0
@@ -39,7 +39,9 @@ pixele = [[ 0 for x in range(320)] for y in range(200)]
 # print(pixele)
 def isPixelContrasting(pixel1, pixel2):
     global count
-    if((int(pixel1)-int(pixel2))>128):
+    c = abs(pixel1 -pixel2)
+
+    if c>128:
         count +=1
 
 for line in linijki:
@@ -53,15 +55,16 @@ for line in linijki:
             else:
                 pixele[i][j] = podzial[j]
                 
-    i+=1
 for a in range(200):
         for b in range(320):
-            if a>0 and isPixelContrasting(pixele[a-1][b],pixele[a][b]): kontrastujace=1
-            elif a<199 and isPixelContrasting(pixele[a+1][b],pixele[a][b]): kontrastujace=1
-            elif b>0 and isPixelContrasting(pixele[a][b-1],pixele[a][b]): kontrastujace=1
-            elif b<319 and isPixelContrasting(pixele[a][b+1],pixele[a][b]):
+            if a>0 and isPixelContrasting(int(pixele[a-1][b]),int(pixele[a][b])): 
                 kontrastujace=1
-                print(count)
+            elif a<199 and isPixelContrasting(int(pixele[a+1][b]),int(pixele[a][b])): 
+                kontrastujace=1
+            elif b>0 and isPixelContrasting(int(pixele[a][b-1]),int(pixele[a][b])): 
+                kontrastujace=1
+            elif b<319 and isPixelContrasting(int(pixele[a][b+1]),int(pixele[a][b])): 
+                kontrastujace=1
             sasiedzi+=kontrastujace
 
 print(count)
