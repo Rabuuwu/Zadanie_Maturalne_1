@@ -1,4 +1,5 @@
 import random
+
 #           odczytywanie kaksi
 odczyt = open("kasa.txt",'r')
 kasa = odczyt.readline()
