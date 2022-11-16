@@ -1,7 +1,7 @@
 import random
 
 #           odczytywanie kaksi
-odczyt = open("kasa.txt",'r')
+odczyt = open("./slotsy/kasa.txt",'r')
 kasa = odczyt.readline()
 kasa = int(kasa)
 odczyt.close()
@@ -10,6 +10,7 @@ odczyt.close()
 amount = input("na ilu slotach chcesz zagrac? (3? a moze 5?)")
 amount= int(amount)
 flag=0
+
 #           sprawdzanie wygranej dla 3 liczb
 def trzy():
     global flag
@@ -17,10 +18,10 @@ def trzy():
         print(sloty)
         flag=1
     else:print(sloty)
+
 #           sprawdzanie wygranej dla 5 liczb
 def piec():
     global flag
-    
     if sloty[0] == sloty[1] == sloty[2] == sloty[3] == sloty[4]:
         print(sloty)
         flag=2
@@ -40,6 +41,7 @@ else:
            trzy()
         if amount == 5:
            piec()
+        
 #           JACKPOT
 if flag==1:
     print("JACKPOT!")
@@ -50,6 +52,7 @@ if flag==2:
 
 #           test odczytu  i nadpisanie kaski
 print(kasa)
+
 #           otwierania pliku do nadpisania kaski po grze
-zapis = open("kasa.txt",'w+')
+zapis = open("./slotsy/kasa.txt",'w+')
 zapis.write(str(kasa))
