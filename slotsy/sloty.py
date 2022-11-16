@@ -43,12 +43,14 @@ else:
            piec()
         
 #           JACKPOT
+if flag != 0:
+    print("JACKPOT!")
 if flag==1:
-    print("JACKPOT!")
     kasa = kasa + 10000
+    print("Wygrales: 10000")
 if flag==2:
-    print("JACKPOT!")
     kasa = kasa + 50000
+    print("Wygrales: 50000")
 
 #           test odczytu  i nadpisanie kaski
 print(kasa)
