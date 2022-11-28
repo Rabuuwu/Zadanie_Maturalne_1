@@ -40,9 +40,18 @@ def maximum(): #4.2
     index = roznica.index(max(roznica))
     print("Max: " + str(linijki[index]) +" "+  str(max(roznica)))
 
-# def liczenie(): #4.4 policzenie roznych, powtarzających sie 2 razy, powt 3  razy
+def liczenie(): #4.4 policzenie roznych, powtarzających sie 2 razy, powt 3  razy
+    checked=[]
+    count=[]
+    for i in range(len(linijki)):
+        if linijki[i] not in checked:
+            count.append([ linijki[i], linijki.count(linijki[i]) ])
+            checked.append(linijki[i])
 
-#     print(rozne,duo,trio)
+    rozne=len(count)
+    podwojne=len([i for i in count if i[1]==2])
+    potrojne=len([i for i in count if i[1]==3])
+    print(rozne, podwojne, potrojne)
 
 
 
@@ -63,8 +72,7 @@ def skrypt():
     print("---------4.3---------")
     odpal_czy_pierwsza()
     print("---------4.4---------")
-    print("Work in progress...")
-    # liczenie()
+    liczenie()
     print("---------------------")
 
 
