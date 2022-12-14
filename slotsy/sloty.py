@@ -1,5 +1,4 @@
 import random
-
 #           sprawdzanie wygranej dla 3 liczb
 def trzy():
     global flag
