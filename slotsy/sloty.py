@@ -1,4 +1,5 @@
 import random
+
 #           sprawdzanie wygranej dla 3 liczb
 def trzy():
     global flag
@@ -25,6 +26,7 @@ def jackpot():
     if flag==2:
         kasa = kasa + 50000
         print("Wygrales: 50000")    
+
 #           slotsy
 def gra():
     global sloty
@@ -61,7 +63,4 @@ def gra():
     zapis = open("./slotsy/kasa.txt",'w+')
     zapis.write(str(kasa))
 
-
 gra()
-
-

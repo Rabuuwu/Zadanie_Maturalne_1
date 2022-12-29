@@ -9,13 +9,11 @@ class MyWindow(QMainWindow):
         self.initUI()
 
     def button_clicked(self):
-        x=0
-        self.label.setText("you clicked me!" + str(x)) # ustawianie tekstu labelki
-        x+=1
+        self.label.setText("you clicked me!") # ustawianie tekstu labelki
         self.update()
 
     def initUI(self):
-        self.setGeometry(200, 200, 300, 300)
+        self.setGeometry(200, 200, 300, 300) # x, y, width, height from top left corner
         self.setWindowTitle("Test Window")
 
         #labelki
@@ -38,7 +36,8 @@ class MyWindow(QMainWindow):
         self.b1.clicked.connect(self.button_clicked) # łączenie przycisku z funkcją
 
     def update(self):
-        self.label.adjustSize() # dopasowywanie wielkości do zawartości
+        self.label.adjustSize()
+        self.label4.adjustSize() # dopasowywanie wielkości do zawartości
 
 
 def window():

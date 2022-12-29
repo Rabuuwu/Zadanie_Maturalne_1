@@ -1,9 +1,9 @@
 #           Zadanie 6.1
 
-# plik = open("dane.txt",'r').read().split()
-# piksele = [eval(i) for i in plik]
-# print(min(piksele))
-# print(max(piksele))
+plik = open("dane.txt",'r').read().split()
+piksele = [eval(i) for i in plik]
+print(min(piksele))
+print(max(piksele))
 
 #           Zadanie 6.2
 
