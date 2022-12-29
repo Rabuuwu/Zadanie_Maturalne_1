@@ -18,44 +18,45 @@
 # wx.Frame(None, title="Hello World").Show()
 # a.MainLoop()
 
-# # PyQT                python pip install pyQt5  python pip install pyQt5Designer
-# from PyQt5 import QtWidgets
-# from PyQt5.QtWidgets import QApplication, QMainWindow
-# import sys
+# # PyQT                #python pip install pyQt5  python pip install pyQt5Designer
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+# import sloty
 
 
-# class MyWindow(QMainWindow):
-#     def __init__(self):
-#         super(MyWindow,self).__init__()
-#         self.initUI()
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super(MyWindow,self).__init__()
+        self.initUI()
 
-#     def button_clicked(self):
-#         self.label.setText("you pressed the button")
-#         self.update()
+    def button_clicked(self):
+        self.label.setText("you pressed the button")
+        self.update()
 
-#     def initUI(self):
-#         self.setGeometry(200, 200, 300, 300)
-#         self.setWindowTitle("Tech With Tim")
+    def initUI(self):
+        self.setGeometry(200, 200, 300, 300)
+        self.setWindowTitle("Tech With Tim")
 
-#         self.label = QtWidgets.QLabel(self)
-#         self.label.setText("my first label!")
-#         self.label.move(50,50)
+        self.label = QtWidgets.QLabel(self)
+        self.label.setText("my first label!")
+        self.label.move(50,50)
 
-#         self.b1 = QtWidgets.QPushButton(self)
-#         self.b1.setText("click me!")
-#         self.b1.clicked.connect(self.button_clicked)
+        self.b1 = QtWidgets.QPushButton(self)
+        self.b1.setText("click me!")
+        self.b1.clicked.connect(self.button_clicked)
 
-#     def update(self):
-#         self.label.adjustSize()
+    def update(self):
+        self.label.adjustSize()
 
 
-# def window():
-#     app = QApplication(sys.argv)
-#     win = MyWindow()
-#     win.show()
-#     sys.exit(app.exec_())
+def window():
+    app = QApplication(sys.argv)
+    win = MyWindow()
+    win.show()
+    sys.exit(app.exec_())
 
-# window()
+window()
 
 # PyGUI                   pip install dearpygui
 # from dearpygui.core import *
@@ -72,11 +73,11 @@
 # start_dearpygui()
 
 
-# PySimpleGUI               pip install PySimpleGUI
+# PySimpleGUI               #pip install PySimpleGUI
 # import PySimpleGUI as sg
 
 # sg.theme('DarkAmber')   # Add a touch of color
-# # All the stuff inside your window.
+# # # All the stuff inside your window.
 # layout = [  [sg.Text('Some text on Row 1')],
 #             [sg.Text('Enter something on Row 2'), sg.InputText()],
 #             [sg.Button('Ok'), sg.Button('Cancel')] ]
