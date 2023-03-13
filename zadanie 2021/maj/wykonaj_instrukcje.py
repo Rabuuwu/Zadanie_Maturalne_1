@@ -2,7 +2,7 @@ from collections import Counter
 tablica = []
 komenda = []
 wyst = []
-plik =  open('instrukcje.txt', 'r').read()
+plik =  open('zadanie 2021\maj\instrukcje.txt', 'r').read()
 linijki = plik.split('\n')
 def USUN_1():
     tablica.pop(len(tablica) - 1)

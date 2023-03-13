@@ -1,4 +1,4 @@
-plik = open("sygnaly.txt",'r').read()
+plik = open("zadanie 2018\sygnaly.txt",'r').read()
 linijki = plik.split()
 x=-1
 y=-1

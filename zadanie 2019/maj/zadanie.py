@@ -1,5 +1,5 @@
 import math
-plik = open("zadanie 2019\przyklad.txt",'r').read()
+plik = open("zadanie 2019\maj\przyklad.txt",'r').read()
 linijki = plik.split()
 
 potegi=[]
@@ -40,4 +40,5 @@ for i in linijki:
 
 print("------------Zadanie 4.1 ------------------")
 print(potegi)
+
 

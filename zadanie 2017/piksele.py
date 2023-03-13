@@ -1,13 +1,13 @@
 #           Zadanie 6.1
 
-plik = open("dane.txt",'r').read().split()
+plik = open("zadanie 2017\dane.txt",'r').read().split()
 piksele = [eval(i) for i in plik]
 print(min(piksele))
 print(max(piksele))
 
 #           Zadanie 6.2
 
-# plik = open("dane.txt",'r').read()
+# plik = open("zadanie 2017\dane.txt",'r').read()
 # linijki = plik.split('\n')
 # flag = 0
 # y = 0 
@@ -41,7 +41,7 @@ print(max(piksele))
 #             return True
 #     return False
  
-# file = open("dane.txt", "r").read().split('\n')
+# file = open("zadanie 2017\dane.txt", "r").read().split('\n')
 # all = [[0 for x in range(320)] for y in range(200)]
 # counter = 0
 # contrasting = 0
@@ -60,7 +60,7 @@ print(max(piksele))
 
 #           Zadanie 6.4
 
-# file = open("dane.txt", "r").read().split('\n')
+# file = open("zadanie 2017\dane.txt", "r").read().split('\n')
 # all = [[0 for x in range(200)] for y in range(320)]
 # counter = 0
 # inline = 0

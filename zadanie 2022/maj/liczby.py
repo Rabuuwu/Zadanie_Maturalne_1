@@ -1,4 +1,4 @@
-plik =  open('liczby.txt', 'r').read()
+plik =  open('zadanie 2022\maj\liczby.txt', 'r').read()
 linijki = plik.split('\n')
 tablica=[]
 x = -1
