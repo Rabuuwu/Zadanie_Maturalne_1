@@ -3,10 +3,8 @@ with open('zadanie 2015/czerwiec/cyfra_kodkreskowy.txt', 'r') as file:
     for line in file:
         values.append(line.strip())
 
-with open('zadanie 2015/czerwiec/test.txt', 'r') as f:
-    liczba = f.readline().strip()
-
-
+with open('zadanie 2015/czerwiec/kody.txt', 'r') as a:
+    liczba = a.readline().strip()
 # ------------Zadanie 6.1 ------------------
 # Inicjalizujemy zmienne dla sumy cyfr w pozycji parzystej i nieparzystej
 even_sum = 0
