@@ -1,5 +1,5 @@
 import math
-plik = open("zadanie 2019\maj\przyklad.txt",'r').read()
+plik = open("zadanie 2019\maj\liczby.txt",'r').read()
 linijki = plik.split()
 nwd=[1]
 liczby=[]
@@ -66,8 +66,7 @@ for x in range(len(linijki)):
           liczby.remove(liczby[0])
           liczby.remove(liczby[0])
           nwd.append(z), liczby.extend([liczba_1,liczba_2,liczba_3])
-liczby.remove(liczby[0])
-liczby.remove(liczby[0])
+
 output = []
 for g in liczby:
     if g not in output:

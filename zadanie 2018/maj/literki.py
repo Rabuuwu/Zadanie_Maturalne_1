@@ -6,7 +6,7 @@ index = 39
 for line in linijki:
     x+=1
     if index == x:    
-        # print(line[9])
+        print(line[9])
         index+=40
     y+=1
     z=0

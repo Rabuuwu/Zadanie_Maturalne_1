@@ -10,7 +10,7 @@ def is_prime(n):
 
 prime_numbers = []
 
-with open('zadanie 2019\czerwiec\liczby_przyklad.txt', 'r') as f:
+with open('zadanie 2019\czerwiec\liczby.txt', 'r') as f:
     for line in f:
         number = int(line.strip())
         if is_prime(number):
@@ -22,7 +22,7 @@ print("Liczby pierwsze: ", prime_numbers)
 # ------------Zadanie 4.2 ------------------
 
 pierwsze=[]
-with open('zadanie 2019\czerwiec\pierwsze_przyklad.txt', 'r') as f:
+with open('zadanie 2019\czerwiec\pierwsze.txt', 'r') as f:
     for line in f:
         number = int(line.strip())
         reversed_number = int(str(number)[::-1])  # odwrócenie cyfr liczby
@@ -30,18 +30,32 @@ with open('zadanie 2019\czerwiec\pierwsze_przyklad.txt', 'r') as f:
             pierwsze.append(number)
 print("------------Zadanie 4.2 ------------------")
 print("Liczby pierwsze rowniez po odwroceniu: ",pierwsze)
-
+print("------------Zadanie 4.3 ------------------")
 # ------------Zadanie 4.3 ------------------
-with open('zadanie 2019\czerwiec\pierwsze_przyklad.txt', 'r') as f:
+pojed=0
+with open('zadanie 2019\czerwiec\pierwsze.txt', 'r') as f:
     for line in f:
         lis=list(line.strip())
         res =[eval(n) for n in lis]
         suma1=sum(res)
         print(suma1)
+        if suma1==1:
+            pojed +=1
         if suma1>9:
             lis1=list(str(suma1).strip())
-            res=[eval(n) for n in lis1]
-            suma=sum(res)
+            res2=[eval(n) for n in lis1]
+            suma=sum(res2)
             print(suma)
-# print("------------Zadanie 4.3 ------------------")
-# print(suma)
+            if suma==1:
+                pojed +=1
+            if suma>9:
+                lis2=list(str(suma).strip())
+                res3=[eval(n) for n in lis2]
+                suma2=sum(res3)
+                print(suma2)
+                if suma2==1:
+                    pojed +=1
+print("ilosc liczb z waga 1: ",pojed)
+
+# ------------Zadanie 4.4 ------------------
+
